@@ -37,7 +37,7 @@ func Router(router *http.ServeMux, store *Store) {
 			}
 			a, err := store.GetArticleById(pid)
 			if err != nil {
-				utils.WriteError(w, http.StatusInternalServerError, fmt.Errorf("failed to get article: %v", err))
+				utils.WriteError(w, http.StatusNotFound, fmt.Errorf("%v", err))
 				return
 			}
 			_ = utils.WriteJson(w, http.StatusOK, a)
