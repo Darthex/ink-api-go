@@ -1,0 +1,2 @@
+migrate create -ext sql -dir cmd/migrate/migrations $(filter-out $@,$(MAKECMDGOALS))
+go build -o bin/ink-golang cmd/main.go
